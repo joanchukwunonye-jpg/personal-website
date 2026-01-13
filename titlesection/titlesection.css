@@ -1,18 +1,27 @@
-h1 {
-	color: blue;
-}
-
-button:hover {
- 	 background-color: purple;
-	 cursor: pointer;
-	 font-size: 25px;
+:root {
+	--titleSectionPrimaryColor: #5a4632;
 }
 
 #title {
-	text-align:center;
+	color: var(--titleSectionPrimaryColor);
+	text-align: center;
 	padding-top: 200px;
 	background-image: url('../images/matti-johnson-n3_J3hycelY-unsplash.jpg');
 	background-position: center top;
-
 }
+
+.title-section-button {
+	color: var(--titleSectionPrimaryColor);
+	border: solid var(--titleSectionPrimaryColor) 1px;
+	border-radius: 5px;
+	padding: 15px 20px;
+	background-color: transparent;
+}
+
+.title-section-button:hover {
+	background-color: #8a6a2f;
+	cursor: pointer;
+}
+
+
 
