@@ -126,6 +126,11 @@
         font-weight: bold ;
     }
 
+    #craps-roll-dice-animation-container {
+        margin-top: calc(var(--height-scale) * -0.17);
+        margin-left: calc(var(--height-scale) * -0.15);
+    }
+
     .craps-bet-amount-container {
         padding: calc(var(--height-scale) * 0.03);
         border-right: solid white 2px;
