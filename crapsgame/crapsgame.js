@@ -112,12 +112,13 @@ function rollDice () {
     formatDiceScale()
     document.getElementById(crapsRollDiceButton).style.display = "none"
     const diceRollElement = document.getElementById(crapsRollDiceAnimationContainer)
+
     rollADie({
         element: diceRollElement,
         numberOfDice: 2,
-        callback: processDiceResult,
+        callback: delayedProcessDiceResult,
         delay: 10000000
-    });
+    })
 }
 
 window.addEventListener("resize", formatDiceScale);
@@ -130,6 +131,12 @@ function formatDiceScale () {
   document.getElementById(crapsRollDiceAnimationContainer).style.transform = "scale(" + scale +")"
 
   
+}
+
+function delayedProcessDiceResult (diceResult) {
+   setTimeout(function () {
+     processDiceResult(diceResult)
+   }, 1000)
 }
 
 
