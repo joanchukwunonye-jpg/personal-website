@@ -67,18 +67,24 @@ function hideMainGameSection () {
 }
 
 function setupFirstRound () {
-    document.getElementById(crapsRollDiceAnimationContainer).style.display = "none"
-    document.getElementById(crapsRoundFinishGridContainer).style.display = "none"
-    document.getElementById(crapsRollDiceButton).style.display = "block"
-    document.getElementById(crapsBettingGridContainer).style.display = "block" 
     document.getElementById(crapsStatsUsername).innerHTML = crapsUsername
-    canChangeBet = true
     setMoney(startingMoney)
     setRounds(startingRounds)
     betEven()
     setBetAmount(minimumBet)
+    setupNextRound()
 }
 
+function setupNextRound () {
+    document.getElementById(crapsRollDiceAnimationContainer).style.display = "none"
+    document.getElementById(crapsRoundFinishGridContainer).style.display = "none"
+    document.getElementById(crapsRollDiceButton).style.display = "block"
+    document.getElementById(crapsBettingGridContainer).style.display = "block" 
+    canChangeBet = true
+    setBetAmount(minimumBet)
+
+}    
+    
 
 function setMoney (money) {
     currentMoney = money
@@ -188,7 +194,7 @@ function processDiceResult (diceResult) {
 }  
 
 function exitGame () {
-    alert("After playing" + " rounds, you leave with " + currentMoney + "$!")
+    alert("After playing " + currentRounds + " rounds, you leave with " + currentMoney + "$!")
   hideMainGameSection()
   showRegistrationPane()
   document.getElementById(crapsUsernameInput).value = ""
